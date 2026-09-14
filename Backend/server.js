@@ -1,13 +1,19 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const path = require("path");
 const userRoutes = require("./routes/user.route");
+const petRoutes = require("./routes/pet.route");
+const adminRoutes = require("./routes/admin.route");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/users", userRoutes);
+app.use("/api/pets", petRoutes);
+app.use("/api/admin", adminRoutes);
 
 app.get("/", (req, res) => {
     res.send("Pet Adoption Platform Backend is running");
