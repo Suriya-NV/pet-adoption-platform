@@ -51,4 +51,16 @@ const getPets = async (req, res) => {
     }
 };
 
-module.exports = { addPet, getPets, upload };
+const getAllPetsForAdmin = async (req, res) => {
+    try {
+        const pets = await Pet.find();
+
+        res.status(200).json(pets);
+    } catch (error) {
+        res.status(500).json({
+            message: "Failed to get pets",
+            error: error.message
+        });
+    }
+};
+module.exports = { addPet, getPets, getAllPetsForAdmin, upload };

@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import BrowsePets from "./pages/BrowsePets";
 import PostPet from "./pages/PostPet";
 import About from "./pages/About";
+import Admin from "./pages/Admin";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/browse-pets" element={<BrowsePets />} />
                 <Route path="/post-pet" element={<PostPet />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/admin" element={<Admin />} />
             </Routes>
         </BrowserRouter>
     );
