@@ -49,7 +49,6 @@ const loginUser = async (req, res) => {
             user
         });
     } catch (error) {
-        console.log("REGISTRATION ERROR:", error);
         res.status(500).json({
             message: "Login failed",
             error: error.message
@@ -57,4 +56,34 @@ const loginUser = async (req, res) => {
     }
 };
 
-module.exports = { registerUser, loginUser };
+const updateProfile = async (req, res) => {
+    try {
+        const { name, phone, address } = req.body;
+
+        const user = await User.findByIdAndUpdate(
+            req.params.id,
+            {
+                name,
+                phone,
+                address
+            },
+            { new: true }
+        );
+
+        res.status(200).json({
+            message: "Profile updated successfully",
+            user
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: "Profile update failed",
+            error: error.message
+        });
+    }
+};
+
+module.exports = {
+    registerUser,
+    loginUser,
+    updateProfile
+};

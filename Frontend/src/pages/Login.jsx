@@ -36,6 +36,7 @@ function Login() {
             alert(data.message);
 
             if (response.ok) {
+                localStorage.setItem("user", JSON.stringify(data.user));
                 navigate("/home");
             }
         } catch (error) {

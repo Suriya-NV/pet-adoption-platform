@@ -1,0 +1,106 @@
+.hero {
+    min-height: 520px;
+    background: linear-gradient(
+        135deg,
+        #e8f5ee,
+        #f8faf9
+    );
+    display: flex;
+    align-items: center;
+    padding: 60px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    color: #24563c;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.hero-btn,
+.secondary-btn {
+    display: inline-block;
+    background-color: #2f6f4e;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.hero-btn:hover,
+.secondary-btn:hover {
+    background-color: #24563c;
+}
+
+.how-section {
+    padding: 70px 60px;
+    text-align: center;
+}
+
+.how-section h2,
+.why-section h2 {
+    font-size: 34px;
+    color: #24563c;
+    margin-bottom: 40px;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.step-card {
+    width: 300px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.step-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.step-card h3 {
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.step-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.why-section {
+    padding: 70px 60px;
+    text-align: center;
+    background-color: #e8f5ee;
+}
+
+.why-section p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #555;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+.footer {
+    padding: 25px;
+    text-align: center;
+    background-color: #24563c;
+    color: white;
+}

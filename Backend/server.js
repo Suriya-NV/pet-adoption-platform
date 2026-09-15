@@ -5,6 +5,7 @@ const path = require("path");
 const userRoutes = require("./routes/user.route");
 const petRoutes = require("./routes/pet.route");
 const adminRoutes = require("./routes/admin.route");
+const adoptionRoutes = require("./routes/adoption.route");
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/users", userRoutes);
 app.use("/api/pets", petRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/adoption", adoptionRoutes);
 
 app.get("/", (req, res) => {
     res.send("Pet Adoption Platform Backend is running");

@@ -6,7 +6,10 @@ import BrowsePets from "./pages/BrowsePets";
 import PostPet from "./pages/PostPet";
 import About from "./pages/About";
 import Admin from "./pages/Admin";
-
+import AdoptPet from "./pages/AdoptPet";
+import MyRequests from "./pages/MyRequests";
+import AdminRequests from "./pages/AdminRequests";
+import Profile from "./pages/Profile";
 function App() {
     return (
         <BrowserRouter>
@@ -18,6 +21,10 @@ function App() {
                 <Route path="/post-pet" element={<PostPet />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/admin" element={<Admin />} />
+                <Route path="/adopt" element={<AdoptPet />} />
+                <Route path="/my-requests" element={<MyRequests />} />
+                <Route path="/admin-requests" element={<AdminRequests />} />
+                <Route path="/profile" element={<Profile />} />
             </Routes>
         </BrowserRouter>
     );
