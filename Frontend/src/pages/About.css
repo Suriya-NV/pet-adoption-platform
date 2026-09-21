@@ -1,0 +1,149 @@
+.about-page {
+    min-height: 100vh;
+    background-color: #f8faf9;
+}
+
+.about-hero {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #e8f5ee, #f8faf9);
+    text-align: center;
+}
+
+.about-hero-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.about-icon {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.about-hero h1 {
+    color: #24563c;
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+.about-hero p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.about-content {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.about-card {
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.about-card-icon {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.about-card h2 {
+    color: #24563c;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.about-card p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.about-bottom {
+    padding: 65px 20px;
+    text-align: center;
+    background-color: #e8f5ee;
+}
+
+.about-bottom h2 {
+    color: #24563c;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.about-bottom p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #555;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+.about-footer {
+    padding: 25px 15px;
+    text-align: center;
+    background-color: #24563c;
+    color: white;
+    font-size: 14px;
+}
+
+@media (max-width: 800px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        max-width: 550px;
+    }
+
+    .about-hero {
+        padding: 60px 20px;
+    }
+
+    .about-hero h1 {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 500px) {
+    .about-hero {
+        padding: 45px 20px;
+    }
+
+    .about-hero h1 {
+        font-size: 28px;
+    }
+
+    .about-hero p {
+        font-size: 15px;
+    }
+
+    .about-content {
+        padding: 40px 15px;
+    }
+
+    .about-card {
+        padding: 25px 20px;
+    }
+
+    .about-bottom {
+        padding: 45px 20px;
+    }
+
+    .about-bottom h2 {
+        font-size: 26px;
+    }
+}

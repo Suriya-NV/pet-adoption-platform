@@ -1,0 +1,121 @@
+.profile-page {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background-color: #f8faf9;
+}
+
+.profile-container {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.profile-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e8f5ee;
+    border-radius: 50%;
+    font-size: 32px;
+}
+
+.profile-header h1 {
+    color: #24563c;
+    margin-bottom: 8px;
+}
+
+.profile-header p {
+    color: #666;
+}
+
+.profile-section {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.profile-section h2 {
+    color: #24563c;
+    margin-bottom: 25px;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.profile-item {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-item span {
+    display: block;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.profile-item strong {
+    color: #333;
+    font-size: 16px;
+}
+
+.edit-profile-btn,
+.edit-section button {
+    margin-top: 25px;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 7px;
+    background-color: #2f6f4e;
+    color: white;
+    font-weight: bold;
+}
+
+.edit-profile-btn:hover,
+.edit-section button:hover {
+    background-color: #24563c;
+}
+
+.edit-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.edit-section input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+.edit-section input:focus {
+    outline: none;
+    border-color: #2f6f4e;
+}
+
+@media (max-width: 600px) {
+    .profile-page {
+        padding: 35px 15px;
+    }
+
+    .profile-section {
+        padding: 22px 20px;
+    }
+
+    .profile-header h1 {
+        font-size: 28px;
+    }
+}

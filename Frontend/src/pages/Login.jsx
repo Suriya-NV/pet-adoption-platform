@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
 
 function Login() {
     const navigate = useNavigate();
@@ -40,37 +41,67 @@ function Login() {
                 navigate("/home");
             }
         } catch (error) {
-            alert("Server error. Please try again.");
             console.log(error);
+            alert("Server error. Please try again.");
         }
     };
 
     return (
-        <div>
-            <h1>Pet Adoption</h1>
-            <h2>Login</h2>
+        <div className="login-page">
+            <div className="login-card">
+                <div className="login-header">
+                    <div className="login-logo">🐾</div>
 
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
+                    <h1>Welcome</h1>
 
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                />
+                    <p>
+                        Login to continue your pet adoption journey.
+                    </p>
+                </div>
 
-                <button type="submit">Login</button>
-            </form>
+                <form className="login-form" onSubmit={handleSubmit}>
+                    <div className="login-form-group">
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    <div className="login-form-group">
+                        <label>Password</label>
+
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    <button type="submit" className="login-btn">
+                        Login
+                    </button>
+                </form>
+
+                <div className="register-link">
+                    <span>Don't have an account?</span>
+
+                    <button
+                        type="button"
+                        onClick={() => navigate("/")}
+                    >
+                        Create Account
+                    </button>
+                </div>
+            </div>
         </div>
     );
 }

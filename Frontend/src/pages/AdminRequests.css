@@ -1,0 +1,160 @@
+.admin-requests-page {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background-color: #f8faf9;
+}
+
+.admin-requests-container {
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.admin-requests-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.admin-requests-header h1 {
+    color: #24563c;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.admin-requests-header p {
+    color: #666;
+}
+
+.admin-requests-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.admin-request-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.admin-request-info {
+    flex: 1;
+}
+
+.admin-request-info h2 {
+    color: #24563c;
+    margin-bottom: 15px;
+}
+
+.admin-request-info p {
+    color: #666;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.admin-request-side {
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.admin-request-status {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.admin-request-status.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.admin-request-status.approved {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.admin-request-status.rejected {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.admin-request-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.admin-request-actions button {
+    border: none;
+    padding: 9px 13px;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+}
+
+.approve-request-btn {
+    background-color: #2f6f4e;
+}
+
+.approve-request-btn:hover {
+    background-color: #24563c;
+}
+
+.reject-request-btn {
+    background-color: #c94c4c;
+}
+
+.reject-request-btn:hover {
+    background-color: #a83d3d;
+}
+
+.requests-empty {
+    background-color: white;
+    padding: 55px 20px;
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.requests-empty h2 {
+    color: #24563c;
+    margin-bottom: 10px;
+}
+
+.requests-empty p {
+    color: #666;
+}
+
+@media (max-width: 650px) {
+    .admin-requests-page {
+        padding: 35px 15px;
+    }
+
+    .admin-requests-header h1 {
+        font-size: 30px;
+    }
+
+    .admin-request-card {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .admin-request-side {
+        align-items: flex-start;
+        min-width: auto;
+    }
+
+    .admin-request-actions {
+        width: 100%;
+    }
+
+    .admin-request-actions button {
+        flex: 1;
+    }
+}

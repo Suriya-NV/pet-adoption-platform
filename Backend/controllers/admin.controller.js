@@ -1,4 +1,6 @@
 const Pet = require("../models/pet.model");
+const fs = require("fs");
+const path = require("path");
 
 const approvePet = async (req, res) => {
     try {
@@ -40,4 +42,41 @@ const rejectPet = async (req, res) => {
     }
 };
 
-module.exports = { approvePet, rejectPet };
+const deletePet = async (req, res) => {
+    try {
+        const pet = await Pet.findById(req.params.id);
+
+        if (!pet) {
+            return res.status(404).json({
+                message: "Pet not found"
+            });
+        }
+
+        const imagePath = path.join(
+            __dirname,
+            "../uploads",
+            pet.image
+        );
+
+        if (fs.existsSync(imagePath)) {
+            fs.unlinkSync(imagePath);
+        }
+
+        await Pet.findByIdAndDelete(req.params.id);
+
+        res.status(200).json({
+            message: "Pet deleted completely"
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: "Failed to delete pet",
+            error: error.message
+        });
+    }
+};
+
+module.exports = {
+    approvePet,
+    rejectPet,
+    deletePet
+};

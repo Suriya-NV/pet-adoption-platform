@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Registration.css";
 
 function Registration() {
     const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -38,67 +40,117 @@ function Registration() {
             alert(data.message);
 
             if (response.ok) {
-    navigate("/login");
-}
+                navigate("/login");
+            }
         } catch (error) {
-            alert("Server error. Please try again.");
             console.log(error);
+            alert("Server error. Please try again.");
         }
     };
 
     return (
-        <div>
-            <h1>Pet Adoption</h1>
-            <h2>Create Account</h2>
+        <div className="registration-page">
+            <div className="registration-card">
 
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                />
+                <div className="registration-header">
+                    <div className="registration-logo">🐾</div>
 
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
+                    <h1>Suriya's Pet House</h1>
 
-                <input
-                    type="text"
-                    name="phone"
-                    placeholder="Phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                />
+                    <p>
+                        Create your account and start your adoption journey.
+                    </p>
+                </div>
 
-                <input
-                    type="text"
-                    name="address"
-                    placeholder="Address"
-                    value={formData.address}
-                    onChange={handleChange}
-                    required
-                />
+                <form
+                    className="registration-form"
+                    onSubmit={handleSubmit}
+                >
+                    <div className="form-group">
+                        <label>Name</label>
 
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                />
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Enter your name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
 
-                <button type="submit">Register</button>
-            </form>
+                    <div className="form-group">
+                        <label>Email</label>
+
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Phone</label>
+
+                        <input
+                            type="text"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Address</label>
+
+                        <input
+                            type="text"
+                            name="address"
+                            placeholder="Enter your address"
+                            value={formData.address}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Password</label>
+
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Create a password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    <button
+                        type="submit"
+                        className="registration-btn"
+                    >
+                        Create Account
+                    </button>
+                </form>
+
+                <div className="login-link">
+                    <span>Already have an account?</span>
+
+                    <button
+                        type="button"
+                        onClick={() => navigate("/login")}
+                    >
+                        Login
+                    </button>
+                </div>
+
+            </div>
         </div>
     );
 }

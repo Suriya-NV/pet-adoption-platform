@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./Profile.css";
 
 function Profile() {
     const [user, setUser] = useState(null);
@@ -69,60 +70,101 @@ function Profile() {
     };
 
     if (!user) {
-        return <p>Please login to view your profile.</p>;
+        return (
+            <div className="profile-page">
+                <div className="profile-container">
+                    <h1>Please Login</h1>
+                    <p>Please login to view your profile.</p>
+                </div>
+            </div>
+        );
     }
 
     return (
-        <div>
-            <h1>My Profile</h1>
+        <div className="profile-page">
+            <div className="profile-container">
+                <div className="profile-header">
+                    <div className="profile-icon">
+                        👤
+                    </div>
 
-            <h2>Profile Information</h2>
+                    <h1>My Profile</h1>
 
-            <p>Name: {user.name}</p>
-            <p>Email: {user.email}</p>
-            <p>Phone: {user.phone}</p>
-            <p>Address: {user.address}</p>
+                    <p>Manage your personal information.</p>
+                </div>
 
-            <button onClick={() => setEditing(!editing)}>
-                {editing ? "Cancel" : "Edit Profile"}
-            </button>
+                <div className="profile-section">
+                    <h2>Profile Information</h2>
 
-            {editing && (
-                <form onSubmit={handleUpdate}>
-                    <h2>Edit Profile</h2>
+                    <div className="profile-details">
+                        <div className="profile-item">
+                            <span>Name</span>
+                            <strong>{user.name}</strong>
+                        </div>
 
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
+                        <div className="profile-item">
+                            <span>Email</span>
+                            <strong>{user.email}</strong>
+                        </div>
 
-                    <input
-                        type="text"
-                        name="phone"
-                        placeholder="Phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                    />
+                        <div className="profile-item">
+                            <span>Phone</span>
+                            <strong>{user.phone}</strong>
+                        </div>
 
-                    <input
-                        type="text"
-                        name="address"
-                        placeholder="Address"
-                        value={formData.address}
-                        onChange={handleChange}
-                        required
-                    />
+                        <div className="profile-item">
+                            <span>Address</span>
+                            <strong>{user.address}</strong>
+                        </div>
+                    </div>
 
-                    <button type="submit">
-                        Update Profile
+                    <button
+                        className="edit-profile-btn"
+                        onClick={() => setEditing(!editing)}
+                    >
+                        {editing ? "Cancel" : "Edit Profile"}
                     </button>
-                </form>
-            )}
+                </div>
+
+                {editing && (
+                    <div className="profile-section edit-section">
+                        <h2>Edit Profile</h2>
+
+                        <form onSubmit={handleUpdate}>
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                required
+                            />
+
+                            <input
+                                type="text"
+                                name="phone"
+                                placeholder="Phone"
+                                value={formData.phone}
+                                onChange={handleChange}
+                                required
+                            />
+
+                            <input
+                                type="text"
+                                name="address"
+                                placeholder="Address"
+                                value={formData.address}
+                                onChange={handleChange}
+                                required
+                            />
+
+                            <button type="submit">
+                                Update Profile
+                            </button>
+                        </form>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }

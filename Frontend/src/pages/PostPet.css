@@ -1,0 +1,89 @@
+.post-pet-page {
+    min-height: 100vh;
+    padding: 60px 20px;
+    background-color: #f8faf9;
+}
+
+.post-pet-container {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.post-pet-container h1 {
+    text-align: center;
+    color: #24563c;
+    margin-bottom: 10px;
+}
+
+.post-pet-container > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.post-pet-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.post-pet-form input,
+.post-pet-form select,
+.post-pet-form textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 15px;
+    background-color: white;
+}
+
+.post-pet-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.post-pet-form input:focus,
+.post-pet-form select:focus,
+.post-pet-form textarea:focus {
+    outline: none;
+    border-color: #2f6f4e;
+}
+
+.post-pet-form input[type="file"] {
+    padding: 10px;
+    background-color: #f8faf9;
+}
+
+.post-pet-form button {
+    margin-top: 10px;
+    padding: 13px;
+    border: none;
+    border-radius: 7px;
+    background-color: #2f6f4e;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.post-pet-form button:hover {
+    background-color: #24563c;
+}
+
+@media (max-width: 600px) {
+    .post-pet-page {
+        padding: 35px 15px;
+    }
+
+    .post-pet-container {
+        padding: 25px 20px;
+    }
+
+    .post-pet-container h1 {
+        font-size: 28px;
+    }
+}
